@@ -53,6 +53,7 @@ export const supportsGoWithoutReloadUsingHash = () =>
  * Accounts for the fact that Chrome on iOS fires real popstate events
  * containing undefined state when pressing the back button.
  */
-export const isExtraneousPopstateEvent = event =>
-  event.state === undefined &&
-  navigator.userAgent.indexOf('CriOS') === -1
+export const isExtraneousPopstateEvent = event => {
+  console.log('rudy-history');
+  return event.state === undefined;
+}
